@@ -36,6 +36,21 @@ func main() {
 	r := '松'
 	fmt.Printf("%#v\n", r)
 	fmt.Printf("%#v\n", string(r))
+
+	var x interface{} = 3.9
+	i, err := x.(int)
+	f, err := x.(float32)
+
+	fmt.Printf("%#v\n", err)
+	fmt.Printf("%#v\n", i)
+	fmt.Printf("%#v\n", f)
+
+	switch x.(type) {
+	case bool:
+		fmt.Println("bool")
+	case int:
+		fmt.Println("int")
+	}
 }
 
 func Foo() {
