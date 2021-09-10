@@ -51,6 +51,26 @@ func main() {
 	case int:
 		fmt.Println("int")
 	}
+	// 配列
+	var array [10]int
+	fmt.Printf("%#v\n", array)
+	fmt.Printf("%#v\n", array[9])
+
+	array2 := [...]int{1, 2, 3, 4}
+	fmt.Printf("%#v\n", array2)
+
+	// スライス
+	s := make([]int, 10)
+	fmt.Printf("%#v\n", s)
+	s = make([]int, 11)
+	fmt.Printf("%#v\n", s[10])
+
+	s0 := []int{1, 2, 3}
+	s1 := []int{11, 12, 13}
+	s2 := append(s0, s1...)
+	fmt.Printf("%#v\n", s0)
+	fmt.Printf("%#v\n", s1)
+	fmt.Printf("%#v\n", s2)
 }
 
 func Foo() {
